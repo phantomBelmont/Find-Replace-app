@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self';
+        img-src 'self' data: https:;
+        font-src 'self' data:;
+        connect-src 'self';
+        base-uri 'self';
+        form-action 'self';
+        worker-src 'self';
+        upgrade-insecure-requests;
+        block-all-mixed-content;
+    ">
+
+    <title>VS Code風 検索・置換ツール (CSP対応)</title>
+<link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4B0082">
+  <link rel="icon" type="image/png" href="icon192.png">
+  <link rel="apple-touch-icon" href="icon192.png">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="stars"></div>
+
+<div class="container">
+    
+    <div class="controls">
+        <div class="input-row">
+            <input type="text" id="find" placeholder="検索ワード...">
+            <input type="text" id="replace" placeholder="置換文字列">
+        </div>
+        
+        <label class="toggle-label">
+            <input type="checkbox" id="case-sensitive" checked> 大文字小文字区別
+        </label>
+
+        <div class="button-group">
+            <button id="btn-search" class="nice-push purple-btn"  >検索 🔍</button>
+            <button id="btn-prev" class="nice-push yellow-btn" disabled>前へ</button>
+            <button id="btn-next" class="nice-push yellow-btn" disabled>次へ</button>
+            <button id="btn-replace" class="nice-push blue-btn" disabled>置換</button>
+            <button id="btn-replace-all" class="nice-push blue-btn" disabled>すべて置換</button>
+            <button id="btn-FnR-copy" class="nice-push green-btn">全コピー</button>
+            <button id="btn-reset" class="secondary nice-push red-btn">リセット</button>
+        </div>
+    </div>
+
+    <div id="error-msg">検索語を入力してください。</div>
+
+    <div class="status-bar">
+        <span id="match-count">一致: 0</span>  <span id="current-match">現在: 0/0</span>
+    </div>
+    
+    <div class="editor-container" tabindex="0">
+        <textarea id="text-editor" placeholder="ここにテキストを入力してください..."></textarea>
+        <div id="highlight-layer"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
