@@ -1,6 +1,7 @@
 /* リセットと基本設定 */
 *, *::before, *::after {
     box-sizing: border-box;
+-webkit-tap-hilight-color:transparent;
 }
 
 html {
