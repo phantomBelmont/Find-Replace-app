@@ -1,4 +1,4 @@
-const F_R_CACHE = 'v1';
+const F_R_CACHE = 'v2';
 const ASSETS = [
   './',
   './index.html',
