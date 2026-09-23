@@ -35,14 +35,13 @@ body {
             vertical-align: middle;
             font-weight: 600;
             font-size: 14px;
-            transition: all 0.2s ease-in-out,
-            will-change: transform, box-shadow;
+            transition: all 0.2s ease-in-out
         }
-        
+
         .nice-push:active {
             transform: scale(0.95) translateY(2px);
         }
-        
+
         .green-btn{
             background-color: transparent;
             color: #00aa00;
@@ -84,8 +83,8 @@ body {
         .yellow-btn:hover {
             background-color: rgba(77,77,77,0.2);
         }
-        
-        
+
+
 
 /* コンテナ */
 .container { 
@@ -94,7 +93,7 @@ body {
     background: transparent; 
     padding: 25px; 
     border-radius: 8px; 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    
 }
 
 /* コントロールエリア */
@@ -126,9 +125,7 @@ body {
 /* フォーカス時の装飾（ここがポイント！） */
 .input-row input:focus {
     border-color: #aaffaa ;
-    box-shadow: 
-        0 0 0 2px #aaffaa, 
-        0 0 30px rgba(170, 255, 170, 0.4) ;
+    
 }
 
 .toggle-label { 
@@ -168,7 +165,7 @@ button:disabled {
 /* 親の div がフォーカスされたら光る（tabindex="0" がある場合） */
 .editor-container:focus-within,.editor-container:focus {
     border-color: #aaffaa !important;
-    box-shadow: 0 0 0 2px #aaffaa, 0 0 30px rgba(170, 255, 170, 0.4) !important;
+    
 } 
 
 /* 入力用テキストエリア（透明で、カーソルだけ見える） */
@@ -179,13 +176,13 @@ button:disabled {
     font-family: 'Consolas', 'Monaco', monospace; font-size: 14px; line-height: 1.6;
     outline: none; position: absolute; top: 0; left: 0;
     z-index: 2; 
-    
+
     background: transparent; 
     color: transparent; /* 通常時は文字を透明に */
-    
+
     caret-color: #007acc; /* カーソルだけ見える */
     overflow: auto;
-    
+
     /* 修正：選択した時の文字色を「白」や「薄い色」に戻す！ */
     ::selection {
         background: rgba(0, 123, 204, 0.4); /* 選択範囲の背景色（少し濃い青） */
@@ -241,28 +238,4 @@ button:disabled {
     text-align: center;
 }
 
-        .stars{
-            position: fixed;
-            height: 100%;
-            width: 100%;
-            top:0; left:0;
-            z-index: -1;
-
-            background-size: 200px 200px;
-            background-image: radial-gradient(2px 2px at 50px 50px, orange, rgba(0,0,0,0)),
-            radial-gradient(2px 2px at 20px 20px, rgb(3, 238, 3), rgba(0,0,0,0)),
-            radial-gradient(2px 2px at 10px 30px, pink, rgba(0,0,0,0)),
-            radial-gradient(2px 2px at 150px 120px, aqua, rgba(0,0,0,0)),
-            radial-gradient(2px 2px at 120px 150px, white, rgba(0,0,0,0));
-            background-repeat: repeat;
-
-            animation: moveDiagonal 5s ease-in-out infinite, twinkle 2s ease-in-out infinite;
-            will-change:opacity;
-        }
-            @keyframes moveDiagonal{
-                from{background-position: 0 0;}
-                to{background-position: 200px 200px;}
-            }
-            @keyframes twinkle{
-                0%,100%{opacity:1;} 50%{opacity: 0.2;}
-            }
+       
